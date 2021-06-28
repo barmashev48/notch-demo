@@ -107,6 +107,7 @@ function App() {
     const newItemInBasket = { name, category, quantity, price, id };
     setBasket((prevState) => [...prevState, newItemInBasket]);
   };
+
   return (
     <div className="App">
       <div className={styles.wrapper}>
