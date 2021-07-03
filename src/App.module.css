@@ -12,14 +12,3 @@
 .main {
   display: flex;
 }
-
-.header {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin: 20px;
-}
-
-.logo {
-  width: 200px;
-}

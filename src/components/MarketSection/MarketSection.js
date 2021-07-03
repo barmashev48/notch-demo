@@ -1,5 +1,5 @@
-import ProductCard from "../ProductCard/ProductCard";
-import styles from "./Market.module.css";
+import ProductCard from "./ProductCard";
+import styles from "./MarketSection.module.css";
 
 const Market = ({ items, onAddToBasket }) => {
   return (

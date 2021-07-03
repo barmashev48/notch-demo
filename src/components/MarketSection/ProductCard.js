@@ -1,13 +1,16 @@
 import styles from "./ProductCard.module.css";
-import Modal from "../Modal/Modal";
-import { useState } from "react";
+
+import { useEffect, useState } from "react";
 
 const ProductCard = ({ name, category, img, price, id, onAddToBasket }) => {
-  const [quantity, setQuantity] = useState("");
+  const [quantity, setQuantity] = useState(0);
+
+  useEffect(() => {
+    onAddToBasket(name, category, quantity, price, id);
+  }, [quantity]);
 
   const increaseQuantity = () => {
     setQuantity((prevState) => +prevState + 1);
-    onAddToBasket(name, category, quantity, price, id);
   };
 
   const decreaseQuantity = () => {
@@ -15,7 +18,6 @@ const ProductCard = ({ name, category, img, price, id, onAddToBasket }) => {
       return;
     }
     setQuantity((prevState) => +prevState - 1);
-    onAddToBasket(name, category, quantity, price, id);
   };
 
   return (

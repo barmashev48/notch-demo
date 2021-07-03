@@ -7,6 +7,18 @@
   margin-right: 5px;
 }
 
-p.selected .checkbox {
+.selected .checkbox {
   background-color: #38087b;
+}
+
+.btn {
+  border: none;
+  background: none;
+  cursor: pointer;
+  display: block;
+  margin-bottom: 5px;
+}
+
+.btn span {
+  vertical-align: baseline;
 }
