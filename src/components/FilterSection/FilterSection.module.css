@@ -1,3 +1,41 @@
 .filterSection {
   width: 200px;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.closeFiltersBtn {
+  border: none;
+  background: white;
+  padding: 5px;
+  border-radius: 5px;
+  cursor: pointer;
+  position: absolute;
+  right: 20px;
+  top: 20px;
+  display: none;
+}
+
+.closeFiltersBtn img {
+  width: 20px;
+}
+
+@media (max-width: 500px) {
+  .filterSection {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    background: rgba(250, 250, 247, 0.9);
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 30px;
+  }
+
+  .closeFiltersBtn {
+    display: block;
+  }
 }

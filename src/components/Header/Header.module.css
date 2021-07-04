@@ -2,7 +2,7 @@
   display: flex;
   justify-content: space-evenly;
   align-items: center;
-  margin: 20px;
+  margin-bottom: 20px;
 }
 
 .logo {
@@ -11,4 +11,12 @@
 
 .controls {
   display: flex;
+  width: 100%;
+  justify-content: space-evenly;
+}
+
+@media (max-width: 500px) {
+  .header {
+    flex-direction: column;
+  }
 }

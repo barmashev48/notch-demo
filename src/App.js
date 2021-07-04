@@ -94,6 +94,7 @@ function App() {
             <FilterSection
               categories={categoryFilters}
               onFilter={onFilterByCategory}
+              onToggleFilters={onToggleFilters}
             />
           )}
 

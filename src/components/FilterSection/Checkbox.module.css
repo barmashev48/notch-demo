@@ -17,6 +17,7 @@
   cursor: pointer;
   display: block;
   margin-bottom: 5px;
+  font-size: 16px;
 }
 
 .btn span {
