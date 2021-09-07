@@ -7,7 +7,7 @@ const FilterToggleButton = ({ onToggleFilters, isFilterDisplayed }) => {
         <span>{isFilterDisplayed ? "Hide" : "Show"}</span> Filters
       </p>
       <img
-        src="https://pics.freeicons.io/uploads/icons/png/18860108731537184102-512.png"
+        src="https://www.pngitem.com/pimgs/m/285-2859045_filter-filters-filters-icon-png-transparent-png.png"
         alt="show/hide filters"
       />
     </button>
