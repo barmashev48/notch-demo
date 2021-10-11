@@ -68,19 +68,6 @@ function App() {
     setFilteredItems(newFilteredItems);
   };
 
-  const onAddToBasket = (name, category, quantity, price, id) => {
-    if (cart.some((item) => id === item.id)) {
-      const newCart = cart.map((item) =>
-        item.id === id ? { ...item, quantity: quantity } : item
-      );
-      setCart(newCart);
-      return;
-    }
-
-    const newItemInCart = { name, category, quantity, price, id };
-    setCart((prevState) => [...prevState, newItemInCart]);
-  };
-
   return (
     <div className="App">
       <div className={styles.wrapper}>
@@ -99,7 +86,7 @@ function App() {
           )}
 
           {isCartDisplayed && <Cart onToggleCart={onToggleCart} cart={cart} />}
-          <MarketSection items={filteredItems} onAddToBasket={onAddToBasket} />
+          <MarketSection items={filteredItems} />
         </main>
       </div>
     </div>

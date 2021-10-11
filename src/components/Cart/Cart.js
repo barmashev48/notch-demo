@@ -1,17 +1,12 @@
 import { useEffect, useState } from "react";
 import styles from "./Cart.module.css";
 import CartItem from "./CartItem";
+import { useSelector } from "react-redux";
 
 const Cart = ({ onToggleCart, cart }) => {
-  const [total, setTotal] = useState(0);
+  const cartItems = useSelector((state) => state.cartReducer.items);
+  const totalPrice = useSelector((state) => state.cartReducer.totalPrice);
 
-  useEffect(() => {
-    const totalReducer = cart.reduce(
-      (acc, currVal) => acc + currVal.quantity * +currVal.price,
-      0
-    );
-    setTotal(totalReducer);
-  }, [cart]);
   return (
     <div className={styles.cart}>
       <button onClick={onToggleCart}>
@@ -22,10 +17,8 @@ const Cart = ({ onToggleCart, cart }) => {
       </button>
       <h2>Your Shopping Cart</h2>
       <ul>
-        {cart.map((item, index) => {
-          if (item.quantity === 0) {
-            return null;
-          }
+        {cartItems.length === 0 && <p>Your cart is empty!</p>}
+        {cartItems.map((item, index) => {
           return (
             <CartItem
               key={index}
@@ -37,7 +30,7 @@ const Cart = ({ onToggleCart, cart }) => {
           );
         })}
       </ul>
-      <p>Total: ${total > 0 ? total : 0}</p>
+      <p>Total: ${totalPrice}</p>
     </div>
   );
 };

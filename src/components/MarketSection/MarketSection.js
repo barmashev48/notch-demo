@@ -1,7 +1,7 @@
 import ProductCard from "./ProductCard";
 import styles from "./MarketSection.module.css";
 
-const Market = ({ items, onAddToBasket }) => {
+const Market = ({ items }) => {
   return (
     <div className={styles.market}>
       {items.map((item) => {
@@ -13,7 +13,6 @@ const Market = ({ items, onAddToBasket }) => {
             category={item.category}
             img={item.img}
             price={item.price}
-            onAddToBasket={onAddToBasket}
           />
         );
       })}

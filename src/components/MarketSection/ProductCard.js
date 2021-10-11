@@ -1,22 +1,19 @@
 import styles from "./ProductCard.module.css";
-
 import { useEffect, useState } from "react";
+import { cartActions } from "../../store/cartSlice";
+import { useDispatch } from "react-redux";
 
-const ProductCard = ({ name, category, img, price, id, onAddToBasket }) => {
+const ProductCard = ({ name, category, img, price, id }) => {
   const [quantity, setQuantity] = useState(0);
-
-  useEffect(() => {
-    onAddToBasket(name, category, quantity, price, id);
-  }, [quantity]);
+  const dispatch = useDispatch();
 
   const increaseQuantity = () => {
+    dispatch(cartActions.addItem({ name, category, price, id }));
     setQuantity((prevState) => +prevState + 1);
   };
 
   const decreaseQuantity = () => {
-    if (quantity === 0) {
-      return;
-    }
+    dispatch(cartActions.removeItem(id));
     setQuantity((prevState) => +prevState - 1);
   };
 
