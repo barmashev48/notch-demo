@@ -1,0 +1,25 @@
+.checkbox {
+  height: 15px;
+  width: 15px;
+  border: 1px solid #38087b;
+  border-radius: 4px;
+  display: inline-flex;
+  margin-right: 5px;
+}
+
+.selected .checkbox {
+  background-color: #38087b;
+}
+
+.btn {
+  border: none;
+  background: none;
+  cursor: pointer;
+  display: block;
+  margin-bottom: 5px;
+  font-size: 16px;
+}
+
+.btn span {
+  vertical-align: baseline;
+}

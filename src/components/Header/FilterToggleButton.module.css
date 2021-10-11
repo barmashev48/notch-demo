@@ -1,0 +1,13 @@
+.btn {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+  width: 120px;
+  display: flex;
+}
+
+.btn img {
+  width: 26px;
+  align-self: center;
+}
