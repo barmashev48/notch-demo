@@ -1,5 +1,47 @@
 .btn {
+  border-radius: 15px;
+  padding: 10px 20px;
+  margin: 10px;
   border: none;
-  background: transparent;
+  background: white;
   cursor: pointer;
+  font-size: 18px;
+}
+
+.btn:hover,
+.btn:active {
+  background: gray;
+}
+
+.text {
+  margin: 15px;
+}
+
+.totalQuantity {
+  border-radius: 15px;
+  color: white;
+  background-color: #38087b;
+  padding: 5px 10px;
+}
+
+.bump {
+  animation: bump 300ms ease-out;
+}
+
+@keyframes bump {
+  0% {
+    transform: scale(1);
+  }
+  10% {
+    transform: scale(0.9);
+  }
+  30% {
+    transform: scale(1.1);
+  }
+  50% {
+    transform: scale(1.15);
+  }
+  100% {
+    transform: scale(1);
+  }
 }
