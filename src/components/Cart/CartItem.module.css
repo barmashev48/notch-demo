@@ -1,7 +1,19 @@
 .cartItem {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
+  align-items: center;
   width: 100%;
   border-bottom: 1px solid #fff;
   padding: 10px 0;
+}
+
+.cartItem button {
+  position: static;
+  background-color: white;
+  margin: 5px;
+  width: 35px;
+}
+
+.cartItem button:hover {
+  background-color: gray;
 }

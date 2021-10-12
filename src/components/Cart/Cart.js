@@ -22,6 +22,7 @@ const Cart = ({ onToggleCart, cart }) => {
           return (
             <CartItem
               key={index}
+              id={item.id}
               quantity={item.quantity}
               price={item.price}
               category={item.category}

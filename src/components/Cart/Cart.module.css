@@ -22,6 +22,11 @@
   position: absolute;
   right: 20px;
   top: 20px;
+  transition: 100ms all;
+}
+
+.cart button:hover {
+  background: gray;
 }
 
 .cart img {
