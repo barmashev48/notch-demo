@@ -1,12 +1,16 @@
 import styles from "./Checkbox.module.css";
+import { filteredItemsActions } from "../../store/filteredItemsSlice";
+import { useDispatch } from "react-redux";
 
-const CheckBox = ({ category, onFilter }) => {
+const CheckBox = ({ category }) => {
+  const dispatch = useDispatch();
+
   const onSelectFilter = () => {
     if (category.selected) {
-      onFilter("Show All");
+      dispatch(filteredItemsActions.onFilterByCategory("Show All"));
       return;
     }
-    onFilter(category.categoryName);
+    dispatch(filteredItemsActions.onFilterByCategory(category.categoryName));
   };
   return (
     <button

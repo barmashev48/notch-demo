@@ -1,7 +1,9 @@
 import Checkbox from "./Checkbox";
 import styles from "./FilterSection.module.css";
+import { useSelector } from "react-redux";
 
-const FilterCategory = ({ categories, onFilter, onToggleFilters }) => {
+const FilterCategory = ({ onFilter, onToggleFilters }) => {
+  const categories = useSelector((state) => state.filteredItemsReducer.filters);
   return (
     <div className={styles.filterSection}>
       <button className={styles.closeFiltersBtn} onClick={onToggleFilters}>

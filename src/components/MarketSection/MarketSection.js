@@ -1,7 +1,10 @@
 import ProductCard from "./ProductCard";
 import styles from "./MarketSection.module.css";
+import { useSelector } from "react-redux";
 
-const Market = ({ items }) => {
+const Market = () => {
+  const items = useSelector((state) => state.filteredItemsReducer.items);
+  console.log(items);
   return (
     <div className={styles.market}>
       {items.map((item) => {
