@@ -3,7 +3,7 @@ import styles from "./Cart.module.css";
 import CartItem from "./CartItem";
 import { useSelector } from "react-redux";
 
-const Cart = ({ onToggleCart, cart }) => {
+const Cart = ({ onToggleCart }) => {
   const cartItems = useSelector((state) => state.cartReducer.items);
   const totalPrice = useSelector((state) => state.cartReducer.totalPrice);
 

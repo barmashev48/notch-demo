@@ -4,35 +4,41 @@ import FilterSection from "./components/FilterSection/FilterSection";
 import Cart from "./components/Cart/Cart";
 import { useState, useEffect } from "react";
 import styles from "./App.module.css";
+import { filteredItemsActions } from "./store/filteredItemsSlice";
+import { useDispatch } from "react-redux";
 import DATA from "./DATA";
 
 function App() {
+  const dispatch = useDispatch();
   const [allItems, setAllItems] = useState(DATA);
   const [filteredItems, setFilteredItems] = useState(allItems);
-  const [cart, setCart] = useState([]);
+
   const [categoryFilters, setCategoryFilters] = useState([]);
+
   const [isFilterDisplayed, setIsFilterDisplayed] = useState(true);
   const [isCartDisplayed, setIsCartDisplayed] = useState(false);
 
   //dynamically set the category filters
   useEffect(() => {
-    const allCategories = allItems.map((item) => {
-      return { categoryName: item.category, selected: false };
-    });
-    const noDuplicateCategories = allCategories.filter(
-      (item, index, arr) =>
-        index ===
-        arr.findIndex(
-          (el) =>
-            el.categoryName === item.categoryName &&
-            el.selected === item.selected
-        )
-    );
-    const filtersToDisplay = [
-      { categoryName: "Show All", selected: true },
-      ...noDuplicateCategories,
-    ];
-    setCategoryFilters(filtersToDisplay);
+    // const allCategories = allItems.map((item) => {
+    //   return { categoryName: item.category, selected: false };
+    // });
+    // const noDuplicateCategories = allCategories.filter(
+    //   (item, index, arr) =>
+    //     index ===
+    //     arr.findIndex(
+    //       (el) =>
+    //         el.categoryName === item.categoryName &&
+    //         el.selected === item.selected
+    //     )
+    // );
+    // const filtersToDisplay = [
+    //   { categoryName: "Show All", selected: true },
+    //   ...noDuplicateCategories,
+    // ];
+    // setCategoryFilters(filtersToDisplay);
+    // dispatch(filteredItemsActions.setFilters());
+    dispatch(filteredItemsActions.setFilters());
   }, []);
 
   const onToggleFilters = () => {
@@ -85,7 +91,7 @@ function App() {
             />
           )}
 
-          {isCartDisplayed && <Cart onToggleCart={onToggleCart} cart={cart} />}
+          {isCartDisplayed && <Cart onToggleCart={onToggleCart} />}
           <MarketSection items={filteredItems} />
         </main>
       </div>
